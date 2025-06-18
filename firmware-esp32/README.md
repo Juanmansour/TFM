@@ -44,5 +44,14 @@
 
 Dentro de la carpeta `schematics/` se encuentran los diagramas de conexión de sensores y actuadores al ESP32.
 
+## Archivos del firmware
+
+| Archivo                 | Descripción                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| `TFM.ino`              | Archivo principal del programa. Orquesta la ejecución: inicializa módulos, ejecuta el bucle principal, y coordina sensores, actuadores y MQTT. |
+| `mqtt_handler.*`       | Gestiona la conexión a WiFi y al broker MQTT. Publica y recibe datos, maneja reconexiones, y procesa mensajes entrantes. |
+| `sensor_handler.*`     | Se encarga de inicializar y leer los sensores conectados al ESP32. También administra las preferencias en NVS y el botón de reseteo de fábrica. |
+| `actuator_handler.*`   | Controla el actuador (humidificador) en modo automático o manual. Guarda configuraciones como umbral, modo y estado en memoria NVS. |
+
 ---
 
