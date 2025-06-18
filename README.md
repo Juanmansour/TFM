@@ -34,3 +34,64 @@ Este proyecto consiste en un sistema IoT distribuido y escalable para el monitor
                                   |  - LDR (Luminosidad)          |
                                   |  - Humidificador (rele/LED)   |
                                   +-------------------------------+
+```
+
+## Requisitos
+
+### Hardware
+
+- Raspberry Pi 4  
+  - Configurada como punto de acceso WiFi (usando `raspap`)
+  - Broker MQTT (Mosquitto)
+  - Servidor Node-RED
+  - Base de datos MariaDB
+
+- ESP32 con:
+  - Sensor de temperatura y humedad del aire (SHT31)
+  - Sensor de temperatura del suelo (DS18B20)
+  - Sensor resistivo de humedad del suelo
+  - Sensor de luz (LDR)
+  - Actuador (humidificador o LED/rele)
+  - Botón físico para reset de fábrica (opcional)
+
+### Software
+
+- Arduino IDE o PlatformIO (para flashear el firmware en el ESP32)
+- Node-RED instalado en Raspberry Pi
+- Mosquitto (broker MQTT)
+- MariaDB (base de datos relacional)
+
+---
+
+## Primeros pasos
+
+1. **Configura la Raspberry Pi**  
+   - Instala Node-RED, Mosquitto y MariaDB.
+   - Configura el punto de acceso WiFi utilizando [`raspap`](https://github.com/RaspAP/raspap-webgui).
+   - Asegúrate de que el broker MQTT escuche en `10.3.141.1` o la IP correspondiente del AP.
+
+2. **Importa el flujo Node-RED**  
+   - Dirígete a [`node-red/`](./node-red/).
+   - Sigue las instrucciones del archivo [README](./node-red/README.md).
+   - Importa el archivo `flows.json` desde la UI de Node-RED.
+
+3. **Carga el firmware en el ESP32**  
+   - Dirígete a [`firmware-esp32/`](./firmware-esp32/).
+   - Abre la carpeta `src/` con el IDE Arduino o PlatformIO.
+   - Flashea el archivo `TFM.ino` al ESP32.
+   - El ESP32 se conectará automáticamente al punto de acceso y comenzará a enviar datos.
+
+4. **Supervisa desde la interfaz**  
+   - Accede a la UI de Node-RED desde un navegador (`http://10.3.141.1:1880/ui`).
+   - Usa la sección de “Nuevo” para asignar un ID a dispositivos nuevos.
+   - Controla el humidificador y visualiza los datos en tiempo real.
+
+---
+
+## Documentación adicional
+
+- [`firmware-esp32/README.md`](./firmware-esp32/README.md): Guía del firmware, estructura de archivos y dependencias.
+- [`node-red/README.md`](./node-red/README.md): Descripción del flujo Node-RED, funciones y lógica del dashboard.
+- [`docs/`](./docs/): *(Opcional)* Diagramas eléctricos, arquitectura y documentación técnica adicional.
+
+
