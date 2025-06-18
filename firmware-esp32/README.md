@@ -31,7 +31,7 @@
 1. Clona este repositorio.
 2. Abre la carpeta `firmware-esp32/src` con el IDE Arduino o PlatformIO.
 3. Instala las dependencias necesarias (ver sección anterior).
-4. Compila y sube el archivo `TFM.ino` al ESP32.
+4. Compila y sube el archivo `main.ino` al ESP32.
 5. El ESP32 buscará conectarse automáticamente al punto de acceso y broker configurados.
 
 ## Notas adicionales
