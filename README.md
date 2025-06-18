@@ -10,7 +10,7 @@ Este proyecto consiste en un sistema IoT distribuido y escalable para el monitor
 |------------------|-------------|
 | [`firmware-esp32/`](./firmware-esp32) | Contiene el firmware para los dispositivos ESP32, incluyendo lectura de sensores, control de actuadores y comunicación MQTT. |
 | [`node-red/`](./node-red)           | Incluye el flujo de nodos para Node-RED. Proporciona una interfaz gráfica de control y visualización, lógica para asignación de IDs, y conexión a base de datos. |
-| [`docs/`](./docs)    | Documentación técnica adicional, esquemas eléctricos, diagramas de arquitectura, etc. |
+| [`docs/`](./docs)    | (En proceso de elaboración) Documentación técnica adicional, esquemas eléctricos, diagramas de arquitectura, etc. |
 
 ---
 
@@ -78,7 +78,7 @@ Este proyecto consiste en un sistema IoT distribuido y escalable para el monitor
 3. **Carga el firmware en el ESP32**  
    - Dirígete a [`firmware-esp32/`](./firmware-esp32/).
    - Abre la carpeta `src/` con el IDE Arduino o PlatformIO.
-   - Flashea el archivo `TFM.ino` al ESP32.
+   - Flashea el archivo `main.ino` al ESP32.
    - El ESP32 se conectará automáticamente al punto de acceso y comenzará a enviar datos.
 
 4. **Supervisa desde la interfaz**  
@@ -92,6 +92,6 @@ Este proyecto consiste en un sistema IoT distribuido y escalable para el monitor
 
 - [`firmware-esp32/README.md`](./firmware-esp32/README.md): Guía del firmware, estructura de archivos y dependencias.
 - [`node-red/README.md`](./node-red/README.md): Descripción del flujo Node-RED, funciones y lógica del dashboard.
-- [`docs/`](./docs/): *(Opcional)* Diagramas eléctricos, arquitectura y documentación técnica adicional.
+- [`docs/`](./docs/): *(En proceso de elaboración)* Diagramas eléctricos, arquitectura y documentación.
 
 
