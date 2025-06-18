@@ -14,7 +14,7 @@ Este proyecto consiste en un sistema IoT distribuido y escalable para el monitor
 
 ---
 
-## 🌐 Arquitectura del Sistema
+## Arquitectura del Sistema
 
 ```text
   +------------------------+           +----------------------------+
